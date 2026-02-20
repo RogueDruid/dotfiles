@@ -1,0 +1,31 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 28,
+
+  "modules-left": ["sway/workspaces"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
+
+  "clock": {
+    "format": "{:%a %b %d  %H:%M}"
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀  Wired",
+    "format-disconnected": "⚠"
+  },
+
+  "pulseaudio": {
+    "format": "  {volume}%"
+  },
+
+  "cpu": {
+    "format": "  {usage}%"
+  },
+
+  "memory": {
+    "format": "  {percentage}%"
+  }
+}
