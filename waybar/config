@@ -1,31 +1,91 @@
-{
-  "layer": "top",
-  "position": "top",
-  "height": 28,
-
-  "modules-left": ["sway/workspaces"],
-  "modules-center": ["clock"],
-  "modules-right": ["pulseaudio", "network", "cpu", "memory", "tray"],
-
-  "clock": {
-    "format": "{:%a %b %d  %H:%M}"
-  },
-
-  "network": {
-    "format-wifi": "  {essid}",
-    "format-ethernet": "󰈀  Wired",
-    "format-disconnected": "⚠"
-  },
-
-  "pulseaudio": {
-    "format": "  {volume}%"
-  },
-
-  "cpu": {
-    "format": "  {usage}%"
-  },
-
-  "memory": {
-    "format": "  {percentage}%"
-  }
-}
+[
+    {
+        "name": "topbar",
+        "layer": "top",
+        "position": "top",
+        "height": 30,
+        "modules-left": [
+            "hyprland/workspaces"
+        ],
+        "modules-center": [
+            "clock"
+        ],
+        "modules-right": [
+            "pulseaudio",
+            "idle_inhibitor"
+        ],
+        "idle_inhibitor": {
+            "format": "{icon}",
+            "format-icons": {
+                "activated": "",
+                "deactivated": ""
+            }
+        },
+        "clock": {
+            "interval": 1,
+            "format": "<b>{:%H:%M:%S}</b>",
+            "format-alt": "{:%Y-%m-%d}",
+            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+        },
+        "cpu": {
+            "format": " {usage}%",
+            "tooltip": false
+        },
+        "disk": {
+            "format": " {}%",
+            "tooltip-format": "{used} / {total} used"
+        },
+        "memory": {
+            "format": " {}%",
+            "tooltip-format": "{used:0.1f}G / {total:0.1f}G used"
+        },
+        "temperature": {
+            "critical-threshold": 80,
+            "format": "{icon} {temperatureC}°C",
+            "format-icons": ["", "", "", "", ""]
+        },
+        "pulseaudio": {
+            "scroll-step": 1,
+            "format": "{icon} {volume}%{format_source}",
+            "format-bluetooth": "{icon} {volume}%{format_source}",
+            "format-bluetooth-muted": " {icon}{format_source}",
+            "format-muted": " {format_source}",
+            "format-source": "  {volume}%",
+            "format-source-muted": " ",
+            "format-icons": {
+                "headphone": "",
+                "phone": "",
+                "portable": "",
+                "car": "",
+                "default": ["", "", ""]
+            },
+            "on-click": "pavucontrol"
+        }
+    },
+    {
+        "name": "bottombar",
+        "layer": "top",
+        "position": "bottom",
+        "height": 36,
+        "modules-left": ["tray"],
+        "modules-center": ["wlr/taskbar"],
+        "modules-right": ["tray"],
+        "tray": {
+            "icon-size": 13,
+            "spacing": 10
+        },
+        "wlr/taskbar": {
+            "format": "{icon} {name}",
+            "icon-size": 13,
+            "tooltip": false,
+            "on-click": "activate",
+            "on-click-right": "close",
+            "app_ids-mapping": {
+                "gnome-terminal-server": "org.gnome.Terminal"
+            }
+        },
+        "sway/mode": {
+            "format": "<span style=\"italic\">{}</span>"
+        }
+    }
+]
