@@ -2,7 +2,7 @@
 /* https://github.com/arkboix/dotfiles */
 configuration {
     modi: "drun,run,window,ssh,combi";
-    font: "Iosevka Nerd Font 12";
+    font: "MartianMono Nerd Font Mono";
     me-select-entry: "w";
     me-accept-entry: "MousePrimary";
     show-icons: true;
@@ -16,7 +16,7 @@ configuration {
     window-format: "{w} · {c} · {t}";
 
     /* Settings */
-    terminal: "kitty";
+    terminal: "terminator";
     sidebar-mode: false;
     combi-modi: "window,drun,run";
     click-to-exit: true;

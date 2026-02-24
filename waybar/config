@@ -12,7 +12,10 @@
         ],
         "modules-right": [
             "pulseaudio",
-            "idle_inhibitor"
+            "idle_inhibitor",
+            "memory",
+            "cpu",
+            "disk"
         ],
         "idle_inhibitor": {
             "format": "{icon}",
@@ -23,9 +26,22 @@
         },
         "clock": {
             "interval": 1,
-            "format": "<b>{:%H:%M:%S}</b>",
+            "format": "{:%H:%M:%S}",
             "format-alt": "{:%Y-%m-%d}",
-            "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                        "mode"          : "year",
+                        "mode-mon-col"  : 3,
+                        "weeks-pos"     : "right",
+                        "on-scroll"     : 1,
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                            }
+            }
         },
         "cpu": {
             "format": " {usage}%",
@@ -66,22 +82,25 @@
         "name": "bottombar",
         "layer": "top",
         "position": "bottom",
-        "height": 36,
-        "modules-left": ["tray"],
+        "height": 30,
+        "modules-left": false,
         "modules-center": ["wlr/taskbar"],
-        "modules-right": ["tray"],
+        "on-click-middle": ["tray"],
         "tray": {
             "icon-size": 13,
             "spacing": 10
         },
         "wlr/taskbar": {
-            "format": "{icon} {name}",
+            "format": "{icon}",
             "icon-size": 13,
-            "tooltip": false,
+            "tooltip-format": "{title}",
             "on-click": "activate",
             "on-click-right": "close",
+            "ignore-list": [
+                "Terminator"
+            ],
             "app_ids-mapping": {
-                "gnome-terminal-server": "org.gnome.Terminal"
+                "gnome-terminal-server": "terminator"
             }
         },
         "sway/mode": {

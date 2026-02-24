@@ -12,3 +12,4 @@ window#waybar {
     border-bottom: 1px solid @unfocused_borders;
     color: @theme_text_color;
 }
+

@@ -1,0 +1,84 @@
+# =========================================
+# Layout
+# =========================================
+
+format = """
+$os\
+$directory\
+$git_branch\
+$git_status\
+$character
+"""
+
+add_newline = false
+
+# =========================================
+# OS (Arch icon)
+# =========================================
+
+[os]
+disabled = false
+style = "bold white"
+
+[os.symbols]
+Arch = " "
+
+# =========================================
+# Directory (with folder icon)
+# =========================================
+
+[directory]
+format = "  [$path]($style) "
+style = "bold white"
+truncation_length = 3
+truncate_to_repo = true
+
+# =========================================
+# Git Branch
+# =========================================
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bold white"
+
+# =========================================
+# Git Status (minimal)
+# =========================================
+
+[git_status]
+format = "([$all_status]($style)) "
+style = "bold white"
+
+# =========================================
+# Prompt Character
+# =========================================
+
+[character]
+success_symbol = "[❯](bold white)"
+error_symbol = "[❯](bold red)"
+
+# =========================================
+# Disable Extra Noise
+# =========================================
+
+[cmd_duration]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[rust]
+disabled = true
+
+[golang]
+disabled = true
+
+[package]
+disabled = true
+
+[docker_context]
+disabled = true
