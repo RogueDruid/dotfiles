@@ -1,1 +1,13 @@
-theme = Catppuccin Mocha
+theme = Gruvbox Material Dark
+background-opacity = .5
+# font-family = Symbols Nerd Font Mono
+right-click-action = copy-or-paste
+# gtk-wide-tabs = false
+# gtk-toolbar-style = raised
+# gtk-titlebar-style = tabs
+# window-padding-balance = true
+window-padding-color = extend
+window-titlebar-background = #BBD8D8
+background-opacity-cells = true
+# window-padding-y = 2
+clipboard-paste-bracketed-safe = true
