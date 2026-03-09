@@ -1,0 +1,22 @@
+{
+    "custom/left-half-circle": {
+        "format": "",
+        "tooltip": false
+
+	},
+    "custom/right-half-circle": {
+        "format": "",
+        "tooltip": false
+	},
+    "custom/exit": {
+        "format": "󰈆",
+        "on-click": "hyprshutdown",
+        "tooltip": false
+    },
+    "custom/dunst": {
+        "tooltip": false,
+        "exec": "~/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "restart-interval": 1,
+    },
+}

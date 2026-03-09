@@ -2,18 +2,14 @@
 
 update_links() {
     echo "Updating dotfile symlinks..."
-
-    ln -sf ~/dotfiles/environment/theme.conf ~/.config/environment.d/theme.conf
+    ln -sf ~/dotfiles/waypaper ~/.config  
     ln -sf ~/dotfiles/waybar ~/.config/
-    ln -sf ~/dotfiles/wofi ~/.config/
     # ln -sf ~/dotfiles/profile/.profile ~/.profile
     ln -sf ~/dotfiles/hypr ~/.config/
-    ln -sf ~/dotfiles/rofi ~/.config/
     # ln -sf ~/dotfiles/zsh/.zprofile ~/.zprofile
     ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
     ln -sf ~/dotfiles/ghostty ~/.config/
     ln -sf ~/dotfiles/starship/starship.toml ~/.config/starship.toml
-    ln -sf ~/dotfiles/fontconfig/fonts.conf ~/.config/fontconfig/fonts.conf
     ln -sf ~/dotfiles/nvim/ ~/.config/nvim
     echo "Symlinks updated."
 }
