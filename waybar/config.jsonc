@@ -1,14 +1,14 @@
 // -*- mode: json -*-
-
 {
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
+		"custom/left-half-circle",
 		"hyprland/workspaces",
-		"custom/right-arrow-dark"
+		"custom/right-half-circle"
 	],
 	"modules-center": [
-		"custom/left-arrow-dark",
+		"custom/left-half-circle",
 		"clock#1",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -16,10 +16,10 @@
 		"custom/right-arrow-dark",
 		"custom/right-arrow-light",
 		"clock#3",
-		"custom/right-arrow-dark"
+		"custom/right-half-circle"
 	],
 	"modules-right": [
-		"custom/left-arrow-dark",
+		"custom/left-half-circle",
 		"pulseaudio",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
@@ -33,11 +33,14 @@
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"disk",
-		"custom/left-arrow-light",
+		"custom/dunst",
 		"custom/left-arrow-dark",
+		// "custom/exit",
 		"tray"
 	],
-
+	"include": [
+		"~/.config/waybar/custom.jsonc"
+	],
 	"custom/left-arrow-dark": {
 		"format": "",
 		"tooltip": false
@@ -54,12 +57,31 @@
 		"format": "",
 		"tooltip": false
 	},
-
-	"sway/workspaces": {
-		"disable-scroll": true,
-		"format": "{name}"
+	"hyprland/workspaces": {
+		"format": "{icon} {windows}",
+		"format-window-separator": "",
+		"workspace-taskbar": {
+			"enable": true,
+			"update-active-window": true,
+			"format": "{icon}",
+			"icon-size": 18,
+			"on-click-window": "${SCRIPTS}/focus-window.sh {address} {button}"
+		},
+		"persistent-workspaces": {
+			"DP-3": [
+				1,
+				2,
+				3,
+				4
+			], 
+			"DP-4": [
+				5,
+				6,
+				7,
+				8
+			] 
+		}
 	},
-
 	"clock#1": {
 		"format": "{:%a}",
 		"tooltip": false
@@ -72,7 +94,6 @@
 		"format": "{:%m-%d}",
 		"tooltip": false
 	},
-
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
 		"format-bluetooth": "{icon}  {volume}%",
@@ -90,11 +111,11 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "Mem {}%"
+		"format": "󰗗 {}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "CPU {usage:2}%"
+		"format": " {usage:2}%"
 	},
 	"battery": {
 		"states": {
@@ -113,10 +134,11 @@
 	},
 	"disk": {
 		"interval": 5,
-		"format": "Disk {percentage_used:2}%",
+		"format": " {percentage_used:2}%",
 		"path": "/"
 	},
 	"tray": {
-		"icon-size": 20
+		"icon-size": 13,
+		"spacing": 10
 	}
 }

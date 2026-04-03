@@ -32,22 +32,47 @@ window#waybar {
 }
 
 #workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
-}
-#workspaces button.focused {
-	color: #268bd2;
-}
-#workspaces button:hover {
-	box-shadow: inherit;
-	text-shadow: inherit;
-}
-#workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	padding: 0 3px;
+    font-family: "Cantarell";
+    font-weight: bold;
+    background-color: @surface0;
+    color: #ffffff;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 0 0.5em;
+    border-radius: 0;
+    padding-left: 5px;
+    padding-right: 2px;
+    min-width: 20px;
 }
 
+#workspaces .workspace-label {
+    padding-left: 3px;
+    border-top: 1px solid transparent;
+}
+
+#workspaces .taskbar-window {
+    border-top: 1px solid transparent;
+    font-weight: normal;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+#workspaces button.visible .taskbar-window,
+#workspaces button.visible .workspace-label {
+    border-color: white;
+}
+
+#workspaces .taskbar-window.active {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+#workspaces .taskbar-window image {
+    margin-top: 1px;
+}
+
+#workspaces button.urgent {
+    background-color: @urgent-color;
+}
 #pulseaudio {
 	color: #268bd2;
 }
@@ -71,4 +96,11 @@ window#waybar {
 #battery,
 #disk {
 	padding: 0 10px;
+}
+
+#custom-right-half-circle {
+	color: #1a1a1a
+}
+#custom-left-half-circle {
+	color: #1a1a1a
 }

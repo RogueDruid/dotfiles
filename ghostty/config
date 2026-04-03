@@ -11,3 +11,4 @@ window-titlebar-background = #BBD8D8
 background-opacity-cells = true
 # window-padding-y = 2
 clipboard-paste-bracketed-safe = true
+keybind = alt+backspace=text:\x1b\x7f
