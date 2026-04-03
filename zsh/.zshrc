@@ -26,6 +26,16 @@ plugins=(
 
 fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 autoload -U compinit && compinit
+
+alias code="code-insiders"
+
 source "$ZSH/oh-my-zsh.sh"
 
 # eval "$(starship init zsh)"
+
+# bun completions
+[ -s "/home/roguedruid/.bun/_bun" ] && source "/home/roguedruid/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
