@@ -1,5 +1,5 @@
 theme = Gruvbox Material Dark
-background-opacity = .75
+background-opacity = .99
 # font-family = Symbols Nerd Font Mono
 right-click-action = copy-or-paste
 # gtk-wide-tabs = false
